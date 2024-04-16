@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "sample-app"
+version = "0.1.0"
+description = ""
+authors = ["Abhai Katiyar <abhaykatiyar804@gmail.com>"]
+readme = "README.md"
+packages = [{include = "sample_app", from = "src"}]
+
+[tool.poetry.dependencies]
+python = "^3.12"
+pydantic = "^2.6.4"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.1.1"
+ruff = "^0.3.5"
+coverage = "^7.4.4"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

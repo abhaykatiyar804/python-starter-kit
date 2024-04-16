@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  dev:
+    build: .
+    image: sample_app:latest
+    container_name: sample_project_dev
+    volumes:
+      - ./src:/app/src
+
+  unit_test:
+    build: .
+    image: sample_app:latest
+    container_name: sample_project_unit_test
+    volumes:
+      - ./reports:/app/report
+      - ./script:/app/script
+      - ./tests:/app/tests
+      - ./src:app/src
+
+    entrypoint: ["bash" ,"./script/docker-entrypoint.sh", "-c"]
+
